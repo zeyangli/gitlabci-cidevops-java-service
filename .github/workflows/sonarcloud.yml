@@ -61,7 +61,7 @@ jobs:
           SONAR_HOST_URL: "https://sonarcloud.io"
           SONAR_LOGIN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          sonar-scanner \
+          ./sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner \
             -Dsonar.projectKey=gitlabci-cidevops-java-service \
             -Dsonar.sources=./src \
             -Dsonar.language=secrets
