@@ -57,7 +57,7 @@ jobs:
           args:
             # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
             # mandatory
-            -Dsonar.projectKey=Devops-test
+            -Dsonar.projectKey=gitlabci-cidevops-java-service
             -Dsonar.organization=devops
             -Dsonar.sources=src
             -Dsonar.language=secrets
