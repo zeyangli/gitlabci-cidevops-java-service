@@ -48,20 +48,20 @@ jobs:
       - name: Set up JDK 8
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: '8'
           distribution: 'temurin'
       - name: Install SonarQube Scanner
         run: |
-          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
           unzip sonar-scanner-cli-4.6.2.2472-linux.zip
-          export PATH="$PATH:$(pwd)/sonar-scanner-4.6.2.2472-linux/bin"
+          export PATH="$PATH:$(pwd)/sonar-scanner-cli-3.1.0.1141-linux/bin"
 
       - name: Run SonarQube Scanner
         env:
           SONAR_HOST_URL: "https://sonarcloud.io"
           SONAR_LOGIN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          ./sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner \
+          ./sonar-scanner-cli-3.1.0.1141-linux/bin/sonar-scanner \
             -Dsonar.projectKey=gitlabci-cidevops-java-service \
             -Dsonar.sources=./src \
             -Dsonar.language=secrets
