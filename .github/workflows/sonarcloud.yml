@@ -55,14 +55,14 @@ jobs:
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
           unzip sonar-scanner-cli-3.1.0.1141-linux.zip
           ls -l 
-          ls ./sonar-scanner-cli-3.1.0.1141-linux/bin/
+          ls ./sonar-scanner-3.1.0.1141-linux/bin/
 
       - name: Run SonarQube Scanner
         env:
           SONAR_HOST_URL: "https://sonarcloud.io"
           SONAR_LOGIN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          ./sonar-scanner-cli-3.1.0.1141-linux/bin/sonar-scanner \
+          ./sonar-scanner-3.1.0.1141-linux/bin/sonar-scanner \
             -Dsonar.projectKey=gitlabci-cidevops-java-service \
             -Dsonar.sources=./src \
             -Dsonar.language=secrets
