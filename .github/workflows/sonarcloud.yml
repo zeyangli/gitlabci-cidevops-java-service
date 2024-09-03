@@ -54,7 +54,8 @@ jobs:
         run: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
           unzip sonar-scanner-cli-3.1.0.1141-linux.zip
-          export PATH="$PATH:$(pwd)/sonar-scanner-cli-3.1.0.1141-linux/bin"
+          ls -l 
+          ls ./sonar-scanner-cli-3.1.0.1141-linux/bin/
 
       - name: Run SonarQube Scanner
         env:
