@@ -52,16 +52,16 @@ jobs:
           distribution: 'temurin'
       - name: Install SonarQube Scanner
         run: |
-          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
-          unzip sonar-scanner-cli-4.7.0.2747-linux.zip
-          export PATH="$PATH:$(pwd)/sonar-scanner-4.7.0.2747-linux/bin"
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+          unzip sonar-scanner-cli-4.6.2.2472-linux.zip
+          export PATH="$PATH:$(pwd)/sonar-scanner-4.6.2.2472-linux/bin"
 
       - name: Run SonarQube Scanner
         env:
           SONAR_HOST_URL: "https://sonarcloud.io"
           SONAR_LOGIN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          ./sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner \
+          ./sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner \
             -Dsonar.projectKey=gitlabci-cidevops-java-service \
             -Dsonar.sources=./src \
             -Dsonar.language=secrets
